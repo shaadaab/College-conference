@@ -758,9 +758,6 @@ th {
     box-shadow: none;
 }
 
-
-
-
 .chair-name {
     margin-top: -50px;
     font-size: 1.4rem;
@@ -963,4 +960,8 @@ hr {
     flex-direction: column;
     margin: 40px;
     font-size: 1.4rem;
+}
+
+@media screen {
+    
 }
