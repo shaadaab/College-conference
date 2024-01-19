@@ -334,7 +334,7 @@ body {
 .timer-container {
     display: flex;
     text-align: center;
-    border: 3px solid #1c1b1b ;
+    border: 3px solid #1c1b1b;
     border-radius: 10px;
     color: #0e0e0e;
     padding: 20px;
@@ -342,7 +342,7 @@ body {
     box-shadow: 3px 3px 2px #111111;
 }
 
-.timer-wrapper{
+.timer-wrapper {
     display: flex;
     flex-direction: row !important;
     gap: 0 80px;
@@ -653,7 +653,7 @@ th {
     box-shadow: 2px 2px black;
 }
 
-.dwnld-btn:hover{
+.dwnld-btn:hover {
     cursor: pointer;
     transform: scale(0.97);
 }
