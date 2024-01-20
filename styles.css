@@ -512,7 +512,7 @@ body {
     font-size: 3rem;
 }
 
-.table {
+.topics-table {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -528,7 +528,7 @@ body {
     justify-content: space-evenly;
 }
 
-.hum.content-box {
+.humanities.content-box {
     flex-direction: row-reverse;
 }
 
