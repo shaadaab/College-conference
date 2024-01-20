@@ -21,9 +21,11 @@ html {
     /* background-color: #e6e3e0; */
     background: linear-gradient(210deg, #dbfcfc, #dbf9f0, #cee4ff, #f8ffd8);
     color: var(--primary-font-color);
-    margin: 60px 90px 0 90px;
 }
 
+.body-content-container {
+    margin: 60px 90px 0 90px;
+}
 
 a {
     text-decoration: none;
@@ -77,9 +79,11 @@ iframe {
     font-weight: bold;
 
 }
-.nav-links{
+
+.nav-links {
     margin: 0 5px;
 }
+
 .logo {
     width: 150px;
 }
@@ -142,15 +146,28 @@ iframe {
 }
 
 .banner {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    gap: 0 30px;
+    width: 80%;
+    align-items: center;
 }
 
-.banner img {
-    max-width: 100%;
+.banner>img {
+    border-radius: 10px;
+}
+
+.banner .left-bnr {
+    width: 900px;
     height: auto;
-    display: block;
-    margin: 0 auto;
-    width: 90%;
+    box-shadow: 5px 5px 4px #222222;
+}
+
+.banner .right-bnr {
+    width: 450px;
+    height: 550px;
+    box-shadow: 6px 6px 4px #222222;
 }
 
 body {
@@ -836,9 +853,7 @@ input {
 footer {
     background-color: #0c2e58;
     color: white;
-    width: 100vw;
-    margin-left: -110px;
-    padding: 10px 150px;
+    padding: 30px;
 }
 
 .upper {
@@ -960,10 +975,17 @@ hr {
 
 @media only screen and (max-width: 767px) {
 
+    #arrow-up {
+        right: -30px;
+    }
+
     .body {
         font-family: var(--primary-font);
         background: linear-gradient(210deg, #dbfcfc, #dbf9f0, #cee4ff, #f8ffd8);
         color: var(--primary-font-color);
+    }
+
+    .body-content-container {
         margin: 10px 20px 0 10px;
     }
 
@@ -992,6 +1014,37 @@ hr {
         align-items: center;
     }
 
+    .right-links .ul li {
+        display: inline-block;
+        margin-right: 20px;
+        position: relative;
+    }
+    
+    .right-links .ul li a {
+        text-decoration: none;
+        position: relative;
+        text-decoration: underline 3px solid #3475c5;
+    }
+    
+    .right-links .ul li a::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        bottom: 0;
+        left: 0;
+        background-color: #efa351;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out;
+    }
+    
+    .right-links .ul li a:hover::before {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+    
+
     .logo {
         width: 70px;
     }
@@ -1007,8 +1060,36 @@ hr {
         margin-right: -10px;
     }
 
-    .nav-links{
+    .nav-links {
         margin: 0 5px;
+    }
+
+    .banner {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        gap: 0 30px;
+        width: 80%;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px 0;
+    }
+
+    .banner>img {
+        border-radius: 10px;
+    }
+
+    .banner .left-bnr {
+        width: 360px;
+        height: auto;
+        box-shadow: 5px 5px 4px #222222;
+    }
+
+    .banner .right-bnr {
+        width: 90%;
+        margin: auto;
+        height: auto;
+        box-shadow: 6px 6px 4px #222222;
     }
 
     #wrapper {
@@ -1218,7 +1299,7 @@ hr {
         font-size: 1.4rem;
     }
 
-    .table {
+    .topics-table {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -1316,7 +1397,8 @@ hr {
         box-shadow: 3px 3px 2px #232323;
         padding: 10px;
         border-radius: 20px;
-        font-size: 1.1rem !important;
+        font-size: 1rem !important;
+        text-align: left;
     }
 
     .copy-btn {
@@ -1324,7 +1406,7 @@ hr {
         border-radius: 5px;
         box-shadow: 1px 1px 2px black;
     }
-    
+
     .notice {
         text-align: center;
         font-size: 1rem;
@@ -1341,40 +1423,711 @@ hr {
         letter-spacing: 1.3px;
     }
 
-    #conference-venue{
+    #conference-venue {
         font-size: 1.7rem;
     }
 
     footer {
         background-color: #0c2e58;
         color: white;
-        width: 100vw;
-        margin-left: -10px;
         padding: 10px 15px;
         display: flex;
         flex-direction: column;
-        height: 70vh;
     }
-    
-    .upper{
+
+    .upper {
         display: flex;
         flex-direction: column;
     }
 
     .upper,
-    .lower>span{
+    .lower>span {
         font-size: 0.8rem;
     }
 
     .upper,
-    .lower>h3{
+    .lower>h3 {
         font-size: 0.9rem;
+    }
+
+    .reg-details h1 {
+        font-size: 1.4rem;
+    }
+
+    .reg-details li {
+        font-size: 0.9rem;
+    }
+
+    .reg-form {
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        width: 100%;
+        text-align: left;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+
+    .committee-heading {
+        font-size: 1.2rem;
+    }
+
+    .cards-container {
+        padding: 10px;
+    }
+
+    .cards-container>h3 {
+        font-size: 1.2rem;
+        text-decoration: underline;
+        margin-bottom: -30px;
+    }
+
+    .chair-cards {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        margin: 10px 20px;
+    }
+
+    .card {
+        width: 280px;
+        height: 320px;
+        overflow: hidden;
+        border-radius: 15px;
+        background: linear-gradient(to bottom, rgb(52, 117, 197) 35%, rgb(239, 163, 81) 25% 100%);
+        margin: 20px 20px;
+    }
+
+    .image-container {
+        box-sizing: border-box;
+        border-radius: 5px;
+        width: 100%;
+        height: 75%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        box-shadow: 11px 11px 7px #454545;
+    }
+
+    .rounded-image {
+        width: 150px;
+        height: 150px;
+        /* border-radius: 10%; */
+        object-fit: contain;
+        border: none;
+    }
+
+    .card-text {
+        padding: 10px;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .card .image-container {
+        box-shadow: none;
+    }
+
+    .chair-name {
+        margin-top: -50px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-family: var(--primary-font);
+
+    }
+
+    .convenors {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .convenors h4 {
+        margin: 5px 0;
+        padding: 15px 5px;
+        width: 60%;
+        text-align: center;
+        color: #fff;
+        border-radius: 3px;
+        font-size: 1rem;
+    }
+
+    .organizers {
+        display: flex;
+        flex-direction: column;
+        margin: 30px 0;
+        font-size: 1.1rem;
+        padding: 5px 0;
     }
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    body {
-        font-size: 16px;
+
+    #arrow-up {
+        right: -35px;
+    }
+
+    .body {
+        font-family: var(--primary-font);
+        background: linear-gradient(210deg, #dbfcfc, #dbf9f0, #cee4ff, #f8ffd8);
+        color: var(--primary-font-color);
+    }
+
+    .body-content-container {
+        margin: 10px 20px 0 10px;
+    }
+
+    .college-info-nav {
+        padding: 10px;
+        background-color: #0c2e58;
+    }
+
+    .college-info-nav>img {
+        width: 120px;
+    }
+
+    .icons {
+        width: 22px;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        color: #131313;
+        padding: 10px;
+        width: 100%;
+        margin-top: 60px;
+        margin-bottom: 30px;
+        font-weight: normal;
+        align-items: center;
+    }
+
+    .logo {
+        width: 70px;
+    }
+
+    .ul {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        font-size: 0.7rem;
+    }
+
+    .right-links .ul li {
+        margin-right: -10px;
+    }
+
+    .nav-links {
+        margin: 0 5px;
+    }
+
+    .banner {
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        gap: 0 30px;
+        width: 80%;
+        align-items: center;
+        gap: 0 20px;
+    }
+
+    .banner>img {
+        border-radius: 10px;
+    }
+
+    .banner .left-bnr {
+        width: 450px;
+        height: auto;
+        box-shadow: 5px 5px 4px #222222;
+    }
+
+    .banner .right-bnr {
+        width: 210px;
+        height: auto;
+        box-shadow: 6px 6px 4px #222222;
+    }
+
+    #wrapper {
+        width: 100%;
+        max-width: 225px;
+        margin-top: -50px;
+        margin-left: 10px;
+        /* display: none; */
+    }
+
+    .timer-container {
+        display: flex;
+        text-align: center;
+        border: 1px solid #1c1b1b;
+        border-radius: 10px;
+        color: #0e0e0e;
+        padding: 20px;
+        flex-direction: column;
+        box-shadow: 3px 3px 2px #111111;
+    }
+
+    .timer-wrapper {
+        display: flex;
+        flex-direction: row !important;
+        gap: 0 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #days,
+    #hours,
+    #minutes,
+    #seconds {
+        font-size: 1.4rem;
+        font-family: 'manrope';
+        font-weight: bold;
+    }
+
+    .timer-words {
+        font-size: 1rem;
+    }
+
+    .colon {
+        font-size: 2rem;
+    }
+
+    .timer-container>h1 {
+        font-size: 1.2rem;
+    }
+
+    .register-btn {
+        border-radius: 10px;
+        padding: 10px;
+        width: 70%;
+        margin: 30px auto;
+        font-weight: bold;
+        display: block;
+        font-size: 1.3rem;
+        background: linear-gradient(210deg, #ff8c00, #fbf315);
+        box-shadow: 3px 3px #161616;
+        cursor: pointer;
+    }
+
+    .college-heading {
+        text-align: center;
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .dept-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .image-container {
+        box-sizing: border-box;
+        border-radius: 5px;
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 11px 11px 7px #454545;
+    }
+
+    .image-container img {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .text-container {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 20px;
+        font-size: 0.8rem;
+        line-height: 23px;
+        text-align: justify;
+        margin-top: 25px;
+    }
+
+    .quick-links {
+        margin-top: 20px;
+    }
+
+    .links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .quick-links>h3 {
+        text-align: center;
+        font-size: 1.3rem !important;
+        margin-bottom: 10px;
+    }
+
+    .quick-links>.links {
+        background-color: #3475c5;
+        padding: 5px;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    .ref-links {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        background-color: #efa351;
+        padding: 5px;
+        border-radius: 5px;
+        margin: 5px;
+        transition: 0.2s ease-in-out;
+        box-shadow: 3px 4px rgb(18, 18, 18);
+        width: 30%;
+        box-sizing: border-box;
+        font-size: 0.8rem;
+    }
+
+    .ref-links:hover {
+        transform: scale(1.15);
+    }
+
+    .about-seminar {
+        padding: 15px;
+        margin-top: -15px;
+    }
+
+    .about-seminar>h2 {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 1.4rem;
+        margin-bottom: 5px;
+        letter-spacing: 2px;
+    }
+
+    .about-seminar>p {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+    }
+
+    .about-seminar>h3 {
+        font-size: 2.3rem;
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+
+    .about-container {
+        margin: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px 0;
+    }
+
+    .tuoba-container {
+        margin: 30px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 30px 0;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .section-content-container>h2 {
+        font-size: 2.4rem;
+        text-shadow: 1px 1px 1px #0e0e0e;
+        color: #234e84;
+    }
+
+    .section-content-container>p {
+        width: 100%;
+        font-size: 1rem;
+        text-align: justify;
+        color: #0e0e0e;
+    }
+
+    .assets-container>img {
+        width: 250px;
+    }
+
+    #seminar-themes {
+        font-size: 1.9rem;
+    }
+
+    .table {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 1px solid black;
+        box-shadow: 0 0 3px 3px #111111;
+        font-size: 1rem;
+        padding: 25px;
+    }
+
+    .content-box {
+        display: flex;
+        text-align: left;
+        justify-content: left;
+    }
+
+
+    .img-cont>img {
+        width: 180px;
+    }
+
+    .table-heading {
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+
+    .table-ul {
+        list-style: circle;
+    }
+
+    .table-ul>li {
+        margin: 10px 0px;
+    }
+
+    .topics-table {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 1px solid black;
+        box-shadow: 0 0 5px 5px #111111;
+        font-size: 1.2rem;
+        padding: 25px;
+    }
+
+    .theme-name {
+        font-size: 1.1rem;
+    }
+
+    .dwnld-btn {
+        padding: 8px;
+        border-radius: 10px;
+        color: white;
+        font-size: 1rem;
+        box-shadow: 2px 2px black;
+    }
+
+    .guidelines-img {
+        transform: rotate(20deg);
+        margin-right: 60px;
+    }
+
+    .assets-container>.guidelines-img {
+        width: 150px;
+    }
+
+    .dates-table {
+        flex-direction: column;
+        font-size: 1rem;
+        gap: 30px 0;
+    }
+
+    .assets-container>.dates-side-img {
+        width: 150px;
+        transform: rotate(20deg);
+    }
+
+    th,
+    td {
+        padding: 10px;
+        border-bottom-right-radius: 10px;
+        border-top-left-radius: 10px;
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #efa351;
+    }
+
+    tbody tr:nth-child(odd) {
+        background-color: rgb(52, 117, 197);
+        color: #f3f3f3;
+    }
+
+
+    .fees-p {
+        border: 2px solid #111111;
+        box-shadow: 3px 3px 2px #232323;
+        padding: 10px;
+        border-radius: 20px;
+        font-size: 1rem !important;
+        text-align: left;
+    }
+
+    .copy-btn {
+        padding: 3px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 2px black;
+    }
+
+    .notice {
+        text-align: center;
+        font-size: 1rem;
+        border: 1px solid gray;
+        padding: 8px;
+    }
+
+    .dept-details.hum {
+        flex-direction: column;
+    }
+
+    .tcd {
+        line-height: 25px;
+        letter-spacing: 1.3px;
+    }
+
+    #conference-venue {
+        font-size: 1.7rem;
+    }
+
+    footer {
+        background-color: #0c2e58;
+        color: white;
+        padding: 10px 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .upper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .upper,
+    .lower>span {
+        font-size: 0.8rem;
+    }
+
+    .upper,
+    .lower>h3 {
+        font-size: 0.9rem;
+    }
+
+    .reg-details h1 {
+        font-size: 1.4rem;
+    }
+
+    .reg-details li {
+        font-size: 0.9rem;
+    }
+
+    .reg-form {
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        width: 100%;
+        text-align: left;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+
+    .committee-heading {
+        font-size: 1.2rem;
+    }
+
+    .cards-container {
+        padding: 10px;
+    }
+
+    .cards-container>h3 {
+        font-size: 1.2rem;
+        text-decoration: underline;
+        margin-bottom: -30px;
+    }
+
+    .chair-cards {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        margin: 10px 20px;
+    }
+
+    .card {
+        width: 280px;
+        height: 320px;
+        overflow: hidden;
+        border-radius: 15px;
+        background: linear-gradient(to bottom, rgb(52, 117, 197) 35%, rgb(239, 163, 81) 25% 100%);
+        margin: 20px 20px;
+    }
+
+    .image-container {
+        box-sizing: border-box;
+        border-radius: 5px;
+        width: 100%;
+        height: 75%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        box-shadow: 11px 11px 7px #454545;
+    }
+
+    .rounded-image {
+        width: 150px;
+        height: 150px;
+        /* border-radius: 10%; */
+        object-fit: contain;
+        border: none;
+    }
+
+    .card-text {
+        padding: 10px;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .card .image-container {
+        box-shadow: none;
+    }
+
+    .chair-name {
+        margin-top: -50px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-family: var(--primary-font);
+
+    }
+
+    .convenors {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .convenors h4 {
+        margin: 5px 0;
+        padding: 15px 5px;
+        width: 60%;
+        text-align: center;
+        color: #fff;
+        border-radius: 3px;
+        font-size: 1rem;
+    }
+
+    .organizers {
+        display: flex;
+        flex-direction: column;
+        margin: 30px 0;
+        font-size: 1.1rem;
+        padding: 5px 0;
     }
 }
