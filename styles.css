@@ -474,7 +474,7 @@ body {
 }
 
 .theme-name {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 
 .quick-links .ql {
@@ -482,6 +482,7 @@ body {
     text-shadow: none;
     color: #0e0e0e;
 }
+
 
 .section-content-container>h2 {
     font-size: 3.4rem;
@@ -627,7 +628,8 @@ th {
 .dept-details {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
+    text-align: center;
 }
 
 
@@ -1340,7 +1342,7 @@ hr {
     }
 
     .theme-name {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .dwnld-btn {
