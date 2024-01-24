@@ -40,7 +40,6 @@ function updateCountdown() {
     }
 }
 
-
 function copyToClipboard(elementId) {
     var textToCopy = document.getElementById(elementId).innerText;
     var tempTextArea = document.createElement("textarea");

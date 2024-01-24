@@ -16,10 +16,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="16x16" href="Assets/favicon-32x32.png">
     <link rel="stylesheet" href="styles.css">
-    <title>NSRTMSFF-2024 | Schedule</title>
+    <title>NSRTMSFF-2024 | Submissions</title>
 </head>
 
 <body class="body">
+
     <div class="body-content-container">
         <div class="college-info-nav">
             <img src="Assets/College-logo.webp" alt="">
@@ -60,13 +61,41 @@
             </div>
         </div>
 
-        <div class="shcedule-details">
+        <div class="reg-details">
             <h1>
-                Schedule will be updated shortly.
+                Submission details <br>
             </h1>
+            <ul>
+                <li>Acceptance notification will be intimated through mail. </li>
+                <li>Only <span class="selected">accepted</span> paper authors should register.</li>
+            </ul>
+
         </div>
 
+
+        <form class="reg-form" name="contact" enctype="multipart/form-data"
+            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdRdrXDVprtB-5lPBMpM8gHWnOQYQHEzieMgoGFwl5xMXeXPg/formResponse">
+
+            <label for="researchPaper">Upload your research paper here</label>
+            <input name="entry.1172595789" type="file" id="proofOfPayment"
+                placeholder="Kindly Upload student ID card on the next Google Form">
+
+            <label for="phoneNumber">Presenting author's phone Number</label>
+            <input name="entry.1976892070" type="text" id="phoneNumber" placeholder="Enter phone number">
+
+            <label for="emailAddress">Presenting author's email Address</label>
+            <input name="entry.806412675" type="email" id="emailAddress" placeholder="Enter email address">
+
+            <h3>
+                If you are being redirected to a google form after clicking submit, kindly upload your paper there.
+            </h3> <br>
+
+            <button class="submit-btn" type="submit">Submit</button>
+        </form>
     </div>
+
+
+
 
 
     <footer>
