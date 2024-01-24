@@ -90,13 +90,21 @@ iframe {
 
 .ul {
     display: flex;
-    justify-content: space-between;
+    justify-content:center;
     list-style: none;
+    align-items: center;
 }
+
 
 .links {
     margin: 0 10px;
 }
+
+.homepage-img{
+    width: 35px;
+}
+
+
 
 .right-links .ul li {
     display: inline-block;
