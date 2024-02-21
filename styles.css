@@ -136,6 +136,7 @@ iframe {
     transform-origin: bottom left;
 }
 
+
 .top-icon-cont {
     display: flex;
     margin: 0 10px;
@@ -987,14 +988,14 @@ hr {
     }
 
     .right-links {
-        position: fixed;
+        /* position: fixed; */
         top: 0;
-        left: -250px; /* Initially hide off the screen */
+        left: -250px;
         width: 250px;
         height: 100%;
-        background-color: #f9f9f9;
-        z-index: 1000;
-        overflow-x: hidden;
+        /* background-color: #f9f9f9; */
+        /* z-index: 1000; */
+        /* overflow-x: hidden; */
         transition: 0.3s;
     }
 
