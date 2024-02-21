@@ -362,6 +362,10 @@ body {
     align-items: center;
 }
 
+.timer-wrapper > h1{
+    font-size: 3.2rem
+}
+
 #days,
 #hours,
 #minutes,
