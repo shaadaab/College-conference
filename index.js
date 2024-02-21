@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-const targetDate = new Date("2024-02-20").getTime();
+const targetDate = new Date("2024-02-29").getTime();
 const interval = setInterval(updateCountdown, 1000);
 
 function updateCountdown() {
@@ -51,3 +51,11 @@ function copyToClipboard(elementId) {
     document.body.removeChild(tempTextArea);
     alert("Copied to clipboard: " + textToCopy);
 }
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    
+    document.querySelector('.menu-toggle').addEventListener('click', function () {
+        document.querySelector('.right-links').classList.toggle('open');
+    });
+});
