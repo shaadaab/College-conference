@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-const targetDate = new Date("2024-02-29").getTime();
+const targetDate = new Date("2024-03-04").getTime();
 const interval = setInterval(updateCountdown, 1000);
 
 function updateCountdown() {
